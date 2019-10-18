@@ -21,8 +21,8 @@ class App extends React.Component {
     Realm.open({schema: [SchemaCustomers]})
       .then((realm) => {
 
-        // INSERT
-        /*for (var i = 1; i < 10; i++) { 
+        // INSERT ----------------------------------------
+        for (var i = 1; i < 10; i++) { 
           realm.write(() => {
             realm.create("customers", {
               username: "iunal",
@@ -31,29 +31,25 @@ class App extends React.Component {
               rank: 0
             });
           });
-        }*/
+        }
 
-        // SELECT
+        // SELECT ----------------------------------------
         var tempdata = realm.objects("customers");
         this.setState({
           dataList: tempdata 
         });
 
-        // DELETE
-        /*
+        // DELETE ----------------------------------------
         realm.write(() => {
           let customer = realm.objects('customers').filtered('username="iunal"');
           realm.delete(customer);
         });
-        */
 
-        // UPDATE
-        /*
+        // UPDATE ---------------------------------------- 
         let customer = realm.objects("customers").filtered("username='iunal'")
         realm.write(() => {
           customer.password = "password"
-        });
-        */
+        }); 
    
     }).catch((error) => {
       console.log(error);
