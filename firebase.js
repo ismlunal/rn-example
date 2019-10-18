@@ -75,7 +75,7 @@ class App extends React.Component
 export default App; 
 
 
-/*
+/* (file:db_config)
 import React from 'react';
 import Firebase from 'firebase';
 
